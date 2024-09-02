@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/full-calendar';
 import { InvokeActionMixin } from 'ember-invoke-action';
 
-const { assign, observer, computed, getOwner } = Ember;
+const { observer, computed, getOwner } = Ember;
 
 export default Ember.Component.extend(InvokeActionMixin, {
 
@@ -128,7 +128,7 @@ export default Ember.Component.extend(InvokeActionMixin, {
   didInsertElement() {
 
     const options =
-      assign(
+      Object.assign(
         this.get('options'),
         this.get('hooks')
       );
